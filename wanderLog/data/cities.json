@@ -1,54 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Nijar",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-04-03T07:47:59.202Z",
-      "notes": "",
-      "position": {
-        "lat": "36.967508314568164",
-        "lng": "-2.13128394200588"
-      },
-      "id": 98443198
-    },
-    {
-      "cityName": "Raigarh",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2023-07-17T18:53:00.504Z",
-      "notes": "",
-      "position": {
-        "lat": "21.899729606233986",
-        "lng": "83.43292236328126"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Urduna / Orduna",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-20T08:36:13.181Z",
-      "notes": "",
-      "position": {
-        "lat": "43.004647127794435",
-        "lng": "-3.0102539062500004"
-      },
-      "id": 98443200
-    },
-    {
-      "cityName": "Chaltikra",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2023-07-20T09:25:23.707Z",
-      "notes": "",
-      "position": {
-        "lat": "21.71357649998363",
-        "lng": "83.99047851562501"
-      },
-      "id": 98443201
-    },
-    {
       "cityName": "Adilabad",
       "country": "India",
       "emoji": "🇮🇳",
@@ -59,6 +11,30 @@
         "lng": "78.5906982421875"
       },
       "id": 98443202
+    },
+    {
+      "cityName": "Bengaluru",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-08-18T05:46:26.708Z",
+      "notes": "jfjfjfjfjfj",
+      "position": {
+        "lat": "12.95102921601837",
+        "lng": "77.59643554687501"
+      },
+      "id": 98443203
+    },
+    {
+      "cityName": "Huameung",
+      "country": "Lao People's Democratic Republic (the)",
+      "emoji": "🇱🇦",
+      "date": "2023-08-18T05:46:39.219Z",
+      "notes": "regerergerg",
+      "position": {
+        "lat": "20.20034600649375",
+        "lng": "103.4912109375"
+      },
+      "id": 98443204
     }
   ]
 }
