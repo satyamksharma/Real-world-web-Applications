@@ -9,9 +9,19 @@ import Account from "./pages/Account";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            staleTime: 1000 * 60,
+        },
+    },
+});
+
 function App() {
     return (
-        <>
+        <QueryClientProvider client={queryClient}>
             <GLobalStyles />
             <BrowserRouter>
                 <Routes>
@@ -60,7 +70,7 @@ function App() {
                     />
                 </Routes>
             </BrowserRouter>
-        </>
+        </QueryClientProvider>
     );
 }
 
