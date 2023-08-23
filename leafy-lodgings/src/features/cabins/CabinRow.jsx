@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 // import { HiPencil, HiTrash, HiSquare2Stack } from "react-icons/hi2";
 
@@ -7,6 +8,9 @@ import styled from "styled-components";
 // import Table from "ui/Table";
 
 import { formatCurrency } from "../../utils/helpers";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteCabin } from "../../services/apiCabins";
+import { toast } from "react-hot-toast";
 // import { useDeleteCabin } from "./useDeleteCabin";
 // import { useCreateCabin } from "./useCreateCabin";
 // import CreateCabinForm from "./CreateCabinForm";
@@ -53,7 +57,20 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-    const { name, maxCapacity, regularPrice, discount, image } = cabin;
+    const { id: cabinId, name, maxCapacity, regularPrice, discount, image } = cabin;
+
+    const queryCLient = useQueryClient();
+
+    const { isLoading: isDeleting, mutate } = useMutation({
+        mutationFn: deleteCabin,
+        onSuccess: () => {
+            toast.success("Cabin deleted Successfully");
+            queryCLient.invalidateQueries({
+                queryKey: ["cabins"],
+            });
+        },
+        onError: (err) => toast.error(err.message),
+    });
     return (
         <TableRow role='row'>
             <Img
@@ -64,7 +81,12 @@ function CabinRow({ cabin }) {
             <div>Fits up to {maxCapacity}</div>
             <Price>{formatCurrency(regularPrice)}</Price>
             <Discount>{formatCurrency(discount)}</Discount>
-            <button>Delete</button>
+            <button
+                onClick={() => mutate(cabinId)}
+                disabled={isDeleting}
+            >
+                Delete
+            </button>
         </TableRow>
     );
 }
