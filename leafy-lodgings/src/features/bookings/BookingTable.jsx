@@ -1,17 +1,17 @@
 // import styled from 'styled-components';
-import BookingRow from "features/bookings/BookingRow";
-import Spinner from "ui/Spinner";
-import Table from "ui/Table";
-import { useBookings } from "features/bookings/useBookings";
-import Menus from "ui/Menus";
-import Pagination from "ui/Pagination";
-import Empty from "ui/Empty";
+import BookingRow from "./BookingRow";
+import Table from "../../ui/Table";
+import Menus from "../../ui/Menus";
+import Empty from "../../ui/Empty";
+import { useBookings } from "./useBookings";
+import Spinner from "../../ui/Spinner";
 
 function BookingTable() {
-    const { bookings, count, isLoading } = useBookings();
+    const { bookings, isLoading } = useBookings();
 
     if (isLoading) return <Spinner />;
-    if (!bookings) return <Empty resource={"bookings"} />;
+
+    if (!bookings.length) return <Empty resourceName='bookings' />;
 
     return (
         <Menus>
